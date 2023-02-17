@@ -4,7 +4,7 @@
  * Return 0 means  it's a success
  */
 
-int main (void)
+int main(void)
 {
 	printf("with a proper grammar, but the outcome is a piece of art,\n");
 return (0);
