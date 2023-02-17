@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <unistd.h>
-
 /**
  * main - startin  point
  * Dora Korpar, 2015-10-19, followed by a line, to the standard error
