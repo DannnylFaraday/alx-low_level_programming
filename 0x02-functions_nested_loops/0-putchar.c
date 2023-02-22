@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #include "main.h"
 /**
  * main - Entry Point
