@@ -7,7 +7,7 @@
  *
  * Return: int
  */
-i/nt check(int a, int b)
+int check(int a, int b)
 {
 	if (a * a == b)
 		return (a);
