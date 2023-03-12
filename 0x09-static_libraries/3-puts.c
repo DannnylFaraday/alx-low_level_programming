@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int _isupper(int c)
+int _puts(char *s)
 {
-	return (c >= 'A' && c <= 'Z');
+	puts(s);
 }

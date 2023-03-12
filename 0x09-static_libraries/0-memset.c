@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int _isupper(int c)
+char *_memset(char *s, char b, unsigned int n)
 {
-	return (c >= 'A' && c <= 'Z');
+	return memset(s, b, n);
 }

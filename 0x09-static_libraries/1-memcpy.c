@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int _isupper(int c)
+char *_memcpy(char *dest, char *s, unsigned int n)
 {
-	return (c >= 'A' && c <= 'Z');
+	return memcpy(dest, src, n);
 }

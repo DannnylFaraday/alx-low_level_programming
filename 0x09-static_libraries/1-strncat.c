@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int _isupper(int c)
+char *_strncat(char *dest, char *src, int n)
 {
-	return (c >= 'A' && c <= 'Z');
+	return strncat(dest, src, n);
 }

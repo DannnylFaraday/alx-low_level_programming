@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int _isupper(int c)
+int _strlen(char *s)
 {
-	return (c >= 'A' && c <= 'Z');
+	return strlen(s);
 }

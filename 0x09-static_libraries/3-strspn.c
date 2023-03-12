@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int _isupper(int c)
+unsigned int _strspn( char *s, char *accept)
 {
-	return (c >= 'A' && c <= 'Z');
+	return strspn(s, accept);
 }

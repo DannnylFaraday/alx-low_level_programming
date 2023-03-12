@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int _isupper(int c)
+int _islower(int c)
 {
-	return (c >= 'A' && c <= 'Z');
+	return (c >= 'a' && c <= 'z');
 }
