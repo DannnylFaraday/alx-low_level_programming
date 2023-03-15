@@ -1,24 +1,28 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * free_grid - frees 2 dimensional grid
- * @grid: two dimensional grid
- * @height: height of the array
+ * create_array - creates an array of chars,
+ * and initializes it with a specific char.
+ * @size: the size of the array
+ * @c: initial value
  *
- * Return: a pointer to a 2 dimensional array of integers
+ * Return: a pointer to the array, or NULL if it fails
  */
-void free_grid(int **grid, int height)
+char *create_array(unsigned int size, char c)
 {
-	int a;
+	char *array;
+	unsigned int i;
 
-	if (grid == '\0' || height <= 0)
-	{
-		return;
-	}
+	if (size == 0)
+		return (NULL);
 
-	for (a = height - 1; a >= 0 ; a--)
-	{
-		free(grid[a]);
-	}
-	free(grid);
+	array = (char *)malloc(sizeof(char) * size);
+	if (array == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+		array[i] = c;
+
+	return (array);
 }
