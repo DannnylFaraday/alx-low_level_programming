@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * _r - changes the memory for an array of pointers to the nodes in a linked list
+ * @list: the old list  changes
+ * @size: size of the new list (always one more than the old list)
+ * @new: new node added to the list
+ * Return: pointer to the new list
+ */
 const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
 {
 	const listint_t **newlist;
@@ -20,6 +27,11 @@ const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
 	return (newlist);
 }
 
+/**
+ * print_listint_safe - prints a listint_t linked list.
+ * @head: points to the starting of the list
+ * Return: the number of nodes in the list
+ */
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i, num = 0;
