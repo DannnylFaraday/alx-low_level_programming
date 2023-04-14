@@ -1,12 +1,10 @@
 #include "main.h"
 
 /**
- * flip_bits - returns the value of bits to be fliped between variables
- * 
+ * flip_bits - returns the number of bits to be flipped between variables
  * @n: the 1st value
  * @m: the 2nd value
- *
- * return: the number of bits being flip
+ * Return: the number of bits needed to flip
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
