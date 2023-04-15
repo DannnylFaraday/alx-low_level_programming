@@ -23,6 +23,7 @@ void error_file(int file_from, int file_to, char *argv[])
 }
 
 
+/*main - where most complex func are*/
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, err_close;
