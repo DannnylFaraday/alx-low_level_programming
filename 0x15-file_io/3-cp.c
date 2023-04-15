@@ -23,7 +23,13 @@ void error_file(int file_from, int file_to, char *argv[])
 }
 
 
-/*main - where most complex func are*/
+/**
+ * main - copies both the source file and the other file.
+ * @argc: number of arguments being passed
+ * @argv: array of pointers to the arguments
+ *
+ * Return: 0 on success
+ */
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, err_close;
