@@ -16,18 +16,32 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return 0;
 	}
-	FILE *base = fopen(filename, "r");
-	if (fp == NULL)
+	FILE *file = fopen(filename, "r");
+	if (file == NULL)
 	{
 		return 0;
 	}
 
-	char list[letters];
-	size_t count = fread(list, sizeof(char), letters, base);
-	if (count == 0)
+	char *list = malloc(sizeof(char) * letters);
+	if (list == NULL)
 	{
-		fclose(base);
+		fclose(file);
 		return 0;
 	}
+
+	size_t count = fread(list, sizeof(char), letters, file);
+	if (count == 0)
+	{
+		fclose(file);
+		free(list);
+		return 0;
+	}
+
+	fwrite(list, sizeof(char), count, stdout);
+
+	fclose(file);
+	free(list);
+
+	return count;
 }
 
