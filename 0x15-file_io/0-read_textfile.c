@@ -12,36 +12,30 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	ssize_t f_desc, b_read, b_written;
+	char *buffer;
+
 	if (filename == NULL)
+		return (0);
+
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
+
+	f_desc = open(filename, O_RDONLY);
+	b_read = read(f_desc, buffer, letters);
+	b_written = write(STDOUT_FILENO, buffer, b_read);
+
+	if (f_desc == -1 || b_read == -1 || b_written == -1 || b_written != b_read)
 	{
+		free(buffer);
 		return (0);
 	}
-	FILE *file = fopen(filename, "r");
-	if (file == NULL)
-	{
-		return 0;
-	}
 
-	char *list = malloc(sizeof(char) * letters);
-	if (list == NULL)
-	{
-		fclose(file);
-		return 0;
-	}
+	free(buffer);
+	close(f_desc);
 
-	size_t count = fread(list, sizeof(char), letters, file);
-	if (count == 0)
-	{
-		fclose(file);
-		free(list);
-		return 0;
-	}
-
-	fwrite(list, sizeof(char), count, stdout);
-
-	fclose(file);
-	free(list);
-
-	return count;
+	return (b_written);
 }
+
 
